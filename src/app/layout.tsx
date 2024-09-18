@@ -14,7 +14,21 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="app">
+          <TopNav />
+          {children}
+        </div>
+      </body>
     </html>
+  );
+}
+
+function TopNav() {
+  return (
+    <nav className="flex w-full items-center justify-between p-3 text-lg font-medium">
+      <div>Image Gallery</div>
+      <div>Sign In</div>
+    </nav>
   );
 }
